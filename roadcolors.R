@@ -1,6 +1,7 @@
 library(sf)
 library(foreign)
 library(tidyverse)
+library(lwgeom)
 
 
 options(stringsAsFactors = FALSE)
@@ -9,7 +10,7 @@ pt <- data.frame(lat = YOURLATHERE, long = YOURLONHERE)
 city <- 'CITYNAMEHERE'
 geoid <-  c('GEOID1', 'GEOID2', 'GEOIDN')
 
-#-------import road files----------
+#-------import road files.----------
 files <- list.files(path="./FeatNames", pattern="*.dbf", full.names=TRUE, recursive=FALSE) %>% as.data.frame
 names(files) <- c("path")
 files$GEOID <- substr(files$path, 21, 25)
