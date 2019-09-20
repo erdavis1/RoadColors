@@ -55,6 +55,13 @@ allroads$TYPE <- substr(allroads$name, stri_locate_last(allroads$name, regex = "
 #run this line if your "suffixes" are at the BEGINNING of the name (e.g. Calle de los Gatos)
 allroads$TYPE <- substr(allroads$name, 1,  str_locate(allroads$name, " ")[, 1] -1)  %>% stri_trans_general(id = "Title")   #for road prefixes
 
+#--------uncomment and run this code to get the top roads by length.
+#--------i usually run this to decide what road types to plot
+#plottype <- allroads %>% select(TYPE,len)
+#plottype$geometry <- NULL
+#plottype <- subset(plottype, !is.na(TYPE))
+#plottype <- plottype %>% group_by(TYPE) %>% summarise(Length = sum(len)) %>% arrange(-Length) 
+
 
 #rename motorways that don't have some other designation
 allroads$TYPE[allroads$fclass == 'motorway' & !(allroads$TYPE %in% plottypes)] <- "Motorway"
