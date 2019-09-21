@@ -21,7 +21,7 @@ city <- "london"
 lat <- 51.508420 #center point latitude
 long <- -0.112730 #center point longitude
 rad <- 20000 #radius, in meters, around the center point to map
-crs <- 102013 #ESRI projection for mapping. I found mine here: https://spatialreference.org/ref/esri/europe-albers-equal-area-conic/
+crs <- 102013 #ESRI projection for mapping. I found mine here: https://spatialreference.org/ref/esri/europe-albers-equal-area-conic/ 102013 will give good results for Europe.
 
 
 #-----------set up the road types you want to plot and what colors they should be
